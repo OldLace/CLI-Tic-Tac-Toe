@@ -3,9 +3,22 @@ import re
 
 def game_on():
     def print_board(row1,row2,row3):
-        print(''.join(row1))
-        print(''.join(row2))
-        print(''.join(row3))
+        print("\n")
+        print(''.join(row1[0] + " | " + row1[1] + " | " + row1[2]))
+        print(''.join(row2[0] + " | " + row2[1] + " | " + row2[2]))
+        print(''.join(row3[0] + " | " + row3[1] + " | " + row3[2]))
+        return
+
+    def instructions(irow1,irow2,irow3):
+        print("##################### Two Player Tic Tac Toe #####################")
+        print("\n")
+        print("######################### Instructions ###########################")
+
+        print("To play the game, select a square by number:")
+       
+        print(''.join(irow1[0] + " | " + irow1[1] + " | " + irow1[2]))
+        print(''.join(irow2[0] + " | " + irow2[1] + " | " + irow2[2]))
+        print(''.join(irow3[0] + " | " + irow3[1] + " | " + irow3[2]))
         return
 
     def win_check(trackerlist):
@@ -20,6 +33,7 @@ def game_on():
         win_condition7 = ["1","5","9"]
         win_condition8 = ["3","5","7"]
         trackerlist.sort()
+
         if(all(x in trackerlist for x in win_condition1)):
             print_board(row1,row2,row3)
             print("Winner!!")
@@ -58,6 +72,10 @@ def game_on():
     row1 = ["_","_","_"]
     row2 = ["_","_","_"]
     row3 = ["_","_","_"]
+
+    irow1 = ["1","2","3"]
+    irow2 = ["4","5","6"]
+    irow3 = ["7","8","9"]
     ####### The Board #######
 
     turn = 1
@@ -78,7 +96,7 @@ def game_on():
     win_condition7 = ["1","5","9"]
     win_condition8 = ["3","5","7"]
     ############# WIN CONDITIONS ################
-
+    instructions(irow1,irow2,irow3)
     while True:
         print_board(row1,row2,row3)
         if turn == 10:
